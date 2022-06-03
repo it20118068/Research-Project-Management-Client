@@ -142,9 +142,8 @@ function RequestSupervisor() {
                                     co_supervior =>
                                     <tr key={co_supervior._id}>       
                                         <td>{co_supervior.name}</td>  
-                                        <td>e-Learning, Software Engineering, ICT for development</td>  
+                                        <td>{co_supervior.researchArea}</td>  
                                         <td>
-                                            <button className="btn btn-primary btn-sm">View Profile</button><span> </span>
                                             <button className="btn btn-primary btn-sm" data-toggle="modal" data-target="#requestModal" onClick={(e)=>{setSelectedUser(co_supervior); setType(2)}}>Request</button>
                                         </td> 
                                     </tr>
