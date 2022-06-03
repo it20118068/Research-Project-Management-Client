@@ -1,0 +1,55 @@
+.my-bg {
+    /* background-color: #eeeeee8e; */
+    background-color: #ffffffef;
+    height: 76vh; 
+}
+
+.body-img {
+    /*  background-image: url("https://wallpaperaccess.com/full/358800.jpg"); */
+    background-image: url("https://static.vecteezy.com/system/resources/previews/001/987/871/original/abstract-black-stripes-diagonal-background-free-vector.jpg"); 
+    /* background-image: url("https://t3.ftcdn.net/jpg/04/57/92/32/360_F_457923238_8zmuShXTsS2CdsXisZSIutaBqKzl5haw.jpg");  */
+    /* background-image: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/110387-beige-and-turquoise-blurred-background-vector.jpg?w=800&q=95"); */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    /* background-color: #0202028e; */
+    height: 100vh;
+}
+
+
+.custom-header {
+    color: rgb(255, 255, 255);
+    /* background-image: url("https://cdn.wallpapersafari.com/41/78/WEprBK.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  */
+    background-color: rgba(0, 1, 24, 0.986);
+    
+    /* border-radius: 10px; */
+}
+
+img.rounded {
+    object-fit: cover;
+    border-radius: 50px;
+    height: 250px;
+    width: 250px;
+  }
+
+
+  .user-profile-bg {
+    background-color: rgba(0, 1, 24, 0.986);
+    color: rgb(255, 255, 255);
+  }
+
+
+  .title-bg {
+    /* background-image: url("https://cdn.wallpapersafari.com/41/78/WEprBK.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  */
+    
+    background-color: rgba(0, 1, 24, 0.986);
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    
+  }
