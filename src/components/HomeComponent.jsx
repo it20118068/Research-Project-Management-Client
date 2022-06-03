@@ -109,6 +109,7 @@ function HomeComponent() {
 
     //Remove Activity
     function removeActivity(){
+        alert(selectedId)
         ActivityService.removeActivity(selectedId).then((res)=>{
             alert("Activity deleted");
             window.location.reload(false);
@@ -201,7 +202,9 @@ function HomeComponent() {
                                 <div class="form-group p-3">
                                     <label style={{fontWeight: "bold"}}>Activity</label>
                                     <select class="form-select bg-dark text-light" aria-label="Default select example" value={selectedId} onChange={(e)=>setSelecetedId(e.target.value)}>
+                                        <option>Selecte the activity</option>
                                         {
+                                            
                                             activitiesList.map(
                                                 act => <option value={act._id}>{act.title}</option>
                                             )

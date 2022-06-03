@@ -92,9 +92,9 @@ function RequestSupervisor() {
                 <li class="nav-item">
                     <a class="nav-link  text-light" href="#" onClick={(e)=> setTableController(1)} >Co-Supervisors</a>
                 </li>
-                <li class="nav-item">
+                {/* <li class="nav-item">
                     <a class="nav-link  text-light" href="#" onClick={(e)=> setTableController(2)} >My Requests</a>
-                </li>
+                </li> */}
             </ul>
 
             <div className="card-body">
@@ -115,9 +115,8 @@ function RequestSupervisor() {
                                     supervisor =>
                                     <tr key={supervisor._id}>       
                                         <td>{supervisor.name}</td>  
-                                        <td>e-Learning, Software Engineering, ICT for development</td>  
+                                        <td>{supervisor.researchArea}</td>  
                                         <td>
-                                            <button className="btn btn-primary btn-sm">View Profile</button><span> </span>
                                             <button className="btn btn-primary btn-sm" data-toggle="modal" data-target="#requestModal" onClick={(e)=>{setSelectedUser(supervisor); setType(1)}} >Request</button>
                                         </td> 
                                     </tr>
