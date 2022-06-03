@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8085/student-groups/";
+const BASE_URL = "https://projectmanagement-tool.herokuapp.com/student-groups/";
 
 class StudentGroupService {
     getGroups() {

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const REQUEST_BASE_URL = "http://localhost:8085/request";
+const REQUEST_BASE_URL = "https://projectmanagement-tool.herokuapp.com/request";
 
 class RequestService {
 
