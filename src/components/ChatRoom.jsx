@@ -12,7 +12,7 @@ function ChatRoom() {
   const [name, setName] = useState("");
   const [userId, setUserId] = useState("");
   const [sid, setSid] = useState("");
-  const [grpId, setGroupId] = useState(localStorage.getItem("grpId"));
+  const [grpId, setGroupId] = useState();
   const [role, setRole] = useState();
 
 
@@ -37,36 +37,67 @@ function ChatRoom() {
     //     getChat();
     //   }
 
-    if(res.data.role == 1){
-        getGrpList(res.data.id);
-    }
-    console.log(res.data);
-    setUserId(res.data.id);
-    setRole(res.data.role);
-    setName(res.data.name);    
-    getChat(grpId);
-    });
+      if(res.data.role == 1){
+          getGrpList(res.data.id);
+      } else if(res.data.role ==2){
+        getStudentGrpId(res.data.user.id)
+      } 
+      console.log(res.data);
+      setUserId(res.data.id);
+      setRole(res.data.role);
+      setName(res.data.name);  
+      setSid(res.data.user.id);
+      
+      getChat(grpId);
+      });
+
   }, []);
+
+
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
-      console.log(data);
-      getChat(grpId);
+      getChat(localStorage.getItem("grpId"));
     });
   }, []);
 
 
 
 
-  function getChat(id) {
-    GroupChatService.getChat(id)
+  async function getChat(id) {
+    let messages = await new Promise((resovle, reject)=>{
+      GroupChatService.getChat(id)
       .then((res) => {
-        setMessages(res.data.messages);
+        resovle(res.data.messages);
       })
       .catch((err) => {
         console.log(err);
       });
+    })
+
+    setMessages(messages);
+
+    // GroupChatService.getChat(id)
+    //   .then((res) => {
+    //     alert(res.data.grpId)
+    //     setMessages(res.data.messages);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  }
+
+  //student use
+  async function getStudentGrpId(id){
+    let gid = await new Promise((resovle, reject)=>{
+        StudentGroupService.getStudentGroupById(id).then((res)=>{
+          resovle(res.data)
+        });
+    })
+    setGroupId(gid)
+    localStorage.setItem("grpId", gid)
+    getChat(gid);
   }
 
   
@@ -76,10 +107,11 @@ function ChatRoom() {
     let message = { sender: name, message: messageTxt };
     const msg = { grpId: grpId, message: message };
 
+
     GroupChatService.sendMessage(msg)
       .then((res) => {
         getChat();
-        console.log(res);
+         console.log(res);
       })
       .catch((err) => {
         console.log(err);

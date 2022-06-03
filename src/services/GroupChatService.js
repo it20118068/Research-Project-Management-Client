@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CHAT_BASE_URL = "https://projectmanagement-tool.herokuapp.com/groupChat";
+const CHAT_BASE_URL = "http://localhost:8085/groupChat";
 
 class GroupChatService {
 

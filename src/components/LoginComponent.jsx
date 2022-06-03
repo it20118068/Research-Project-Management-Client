@@ -11,21 +11,31 @@ function LoginComponent() {
         const user = {email, password}
         UserService.authUser(user).then((res)=>{
             localStorage.setItem('token', res.data.user)
-            localStorage.setItem('name', res.data.name)
-            getStudentGroupId(res.data.sid);        
+            getStudentGrpId(res.data.sid);        
 			window.location.href = '/'
         }).catch((err)=>{
             alert(err);
         })
     }
 
-    function getStudentGroupId(id){
-        StudentGroupService.getStudentGroupById(id).then((res)=>{
-            localStorage.setItem('grpId', res.data)
-        }).catch((err)=>{
-            alert(err);
+    // function getStudentGroupId(id){
+    //     StudentGroupService.getStudentGroupById(id).then((res)=>{
+    //         alert(res.data.sid)
+    //         localStorage.setItem('grpId', res.data)
+    //     }).catch((err)=>{
+    //         alert(err);
+    //     })
+    //   }
+
+    //student use
+    async function getStudentGrpId(id){
+        let gid = await new Promise((resovle, reject)=>{
+            StudentGroupService.getStudentGroupById(id).then((res)=>{
+            resovle(res.data)
+            });
         })
-      }
+        localStorage.setItem('grpId', gid)
+    }
 
     return (
         <div>

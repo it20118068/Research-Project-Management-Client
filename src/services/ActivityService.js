@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const USER_BASE_URL = "https://projectmanagement-tool.herokuapp.com/activity/";
+const USER_BASE_URL = "http://localhost:8085/activity/";
 
 class ActivityService {
     getActivities(){
