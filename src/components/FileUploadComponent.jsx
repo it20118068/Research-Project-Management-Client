@@ -40,27 +40,27 @@ function FileUploadComponent(props) {
 
 
     return (  
-        <div className="container">
-            <div className="card p-5 my-bg" style={{borderRadius: "25px"}}>
-            <h4 className="mb-4 p-4 card-header title-bg ">File Submision</h4>
+        <div>
+            <div className="card bg-dark p-3 mt-3" style={{opacity:'90%'}} >
+            <h4 className="mb-4 p-4 card-header title-bg ">File Submission</h4>
 
                 <span className={messageClass}>{message}</span>
 
-                <div className="card-body">
+                <div className="card-body text-light">
                     <div className="col-md-6 m-auto">
                             <div className="form-group">
                                 <label>Title </label>
-                                <input type="text" className="form-control mb-3" value={props.title} readOnly />
+                                <input type="text" className="form-control mb-3 bg-dark text-light" value={props.title} readOnly />
                             </div>
-                            <div className="form-group files color mb-4">
+                            <div className="form-group  files color mb-4">
                                 <label>Upload Your File </label>
-                                <input type="file" className="form-control" name="file" onChange={(e)=>setSelectedFile(e.target.files[0])}/>
+                                <input type="file" className="form-control bg-dark text-light" name="file" onChange={(e)=>setSelectedFile(e.target.files[0])}/>
                             </div>
                             <div className="form-group">
                                 <label>Group ID </label>
-                                <input type="text" className="form-control mb-3" onChange={(e)=>setGroupId(e.target.value)} />
+                                <input type="text" className="form-control mb-3 bg-dark text-light" onChange={(e)=>setGroupId(e.target.value)} />
                             </div>
-                            <button className="btn btn-primary" onClick={(e)=> props.setShowContent(true)}>Back</button> <span> </span>
+                            <button className="btn btn-secondary" onClick={(e)=> props.setShowContent(true)}>Back</button> <span> </span>
                             <button className="btn btn-primary" onClick={uploadFile}>Submit</button>
                     </div>
                     

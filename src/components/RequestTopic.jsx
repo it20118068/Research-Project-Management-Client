@@ -78,17 +78,17 @@ function RequestTopic() {
 
 
     return (  
-        <div className="container">
-            <div className="card p-5 my-bg" style={{borderRadius: "25px"}}>
+        <div>
+            <div className="card bg-dark p-3 mt-4" style={{opacity:'90%'}} >
             <h4 className="mb-4 p-4 card-header title-bg ">Request Research Topic</h4>
         
             <div className="card-body">
-                <form>
+                <form className="text-light">
 
                     <div className="row">
                         <div class="form-group mb-3 col">
                             <label style={{fontWeight: "bold"}}>Supervisor</label>
-                            <select class="form-select" aria-label="Default select example" onChange={(e)=> setSupervisor(e.target.value)}>
+                            <select class="form-select bg-dark text-light" aria-label="Default select example" onChange={(e)=> setSupervisor(e.target.value)}>
                                 <option>Select </option>
                                 {
                                     supervisorsList.map(
@@ -100,7 +100,7 @@ function RequestTopic() {
                         </div>
                         <div class="form-group mb-3 col">
                             <label style={{fontWeight: "bold"}}>Co-Supervisor</label>
-                            <select class="form-select" aria-label="Default select example" onChange={(e)=> setCoSupervisor(e.target.value)}>
+                            <select class="form-select bg-dark text-light" aria-label="Default select example" onChange={(e)=> setCoSupervisor(e.target.value)}>
                                 <option>Select</option>
                                 {
                                     co_supervisorsList.map(
@@ -118,19 +118,19 @@ function RequestTopic() {
 
                     <div class="form-group mb-3">
                         <label style={{fontWeight: "bold"}}>Group ID </label>
-                        <input type="text" class="form-control"  onChange={(e)=> setGroupId(e.target.value)}/>
+                        <input type="text" class="form-control bg-dark text-light"  onChange={(e)=> setGroupId(e.target.value)}/>
                     </div> 
 
                     <div class="form-group mb-3">
                         <label style={{fontWeight: "bold"}}>Topic </label>
-                        <input type="text" class="form-control" onChange={(e)=> setTopic(e.target.value)} />
+                        <input type="text" class="form-control bg-dark text-light" onChange={(e)=> setTopic(e.target.value)} />
                     </div>  
 
                     <div class={alertClass} role="alert">
                             {alertMessage}
                     </div>
 
-                    <button type="button" className="btn btn-primary" onClick={createRequest}>Submit</button>
+                    <button type="button" className="btn btn-secondary" onClick={createRequest}>Submit</button>
 
 
                 </form>     

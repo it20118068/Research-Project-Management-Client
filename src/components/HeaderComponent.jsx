@@ -59,6 +59,9 @@ function HeaderComponent() {
                                 <li className="nav-item">
                                     <a className="nav-link" href="/file/submissions/students" style={{fontSize: "17px"}}>Submissions</a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/chat" style={{fontSize: "17px"}}>Chat</a>
+                                </li>
                             </ul>
                             }
 
@@ -100,6 +103,18 @@ function HeaderComponent() {
                             </div>
                         </div>
                     </div>
+                     }
+                    {userName == null &&
+                        <div>
+                            <ul className="navbar-nav mr-auto">   
+                                <li className="nav-item active">
+                                    <a className="nav-link" href="/login">Login</a>
+                                </li>
+                                <li className="nav-item active">
+                                    <a className="nav-link" href="/register">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
                      }
                 </nav>
                     

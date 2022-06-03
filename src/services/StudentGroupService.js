@@ -35,6 +35,10 @@ class StudentGroupService {
         return axios.get(BASE_URL + "student/" + id);
     }
 
+    getGroupListById(id) {
+        return axios.get(BASE_URL + "staff/" + id);
+    }
+
     // authUser(user){
     //     return axios.post(USER_BASE_URL + 'login', user);
     // }

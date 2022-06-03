@@ -2,9 +2,9 @@ import React,{useEffect, useState} from "react";
 
 function ResearchTopicRequest() {
     return (  
-        <div className="container">
-        <div className="card p-5 my-bg" style={{borderRadius: "25px"}}>
-        <h2 className="card-header mb-5 p-4" style={{borderRadius: "20px"}}>Topic Requests</h2>
+        <div>
+        <div className="card bg-dark p-3" style={{opacity:'90%'}} >
+            <h4 className="mb-4 p-4 card-header title-bg ">Topic Requests</h4>
 
        
 

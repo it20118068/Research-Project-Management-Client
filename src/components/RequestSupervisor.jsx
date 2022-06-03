@@ -81,26 +81,26 @@ function RequestSupervisor() {
 
 
     return (  
-        <div className="container">
-            <div className="card p-5 my-bg" style={{borderRadius: "25px"}}>
-            <h2 className="card-header mb-5 p-4 title-bg" >Request Supervisor/Co-Supervisor</h2>
+        <div>
+            <div className="card bg-dark p-3" style={{opacity:'90%'}} >
+            <h4 className="mb-4 p-4 card-header title-bg ">Request Supervisor/Co-Supervisor</h4>
 
-            <ul class="nav nav-tabs justify-content-center">
+            <ul class="nav nav-tabs justify-content-center ">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#" onClick={(e)=> setTableController(0)}>Supervisors</a>
+                    <a class="nav-link  text-light" aria-current="page" href="#" onClick={(e)=> setTableController(0)}>Supervisors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick={(e)=> setTableController(1)} >Co-Supervisors</a>
+                    <a class="nav-link  text-light" href="#" onClick={(e)=> setTableController(1)} >Co-Supervisors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick={(e)=> setTableController(2)} >My Requests</a>
+                    <a class="nav-link  text-light" href="#" onClick={(e)=> setTableController(2)} >My Requests</a>
                 </li>
             </ul>
 
             <div className="card-body">
                     <div className="col m-auto">
                     {tableController == 0 &&
-                    <table className="table table-hover ">
+                    <table className="table table-hover table-dark ">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -128,7 +128,7 @@ function RequestSupervisor() {
 
 
                     {tableController == 1 &&
-                    <table className="table table-hover ">
+                    <table className="table table-hover table-dark ">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>

@@ -84,8 +84,8 @@ function StaffRequests() {
 
 
     return (  
-        <div className="container">
-            <div className="card p-5 my-bg" style={{borderRadius: "25px"}}>
+        <div>
+            <div className="card bg-dark p-3" style={{opacity:'90%'}} >
             <h4 className="mb-4 p-4 card-header title-bg ">My Requests</h4>
 
        
@@ -93,17 +93,17 @@ function StaffRequests() {
         <div className="card-body">
         <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item">
-                    <button class="nav-link" onClick={(e)=>{setIsVisible(true)}} >Supervisors / Co-Supervisors</button>
+                    <button class="nav-link text-light" onClick={(e)=>{setIsVisible(true)}} >Supervisors / Co-Supervisors</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" onClick={(e)=>{setIsVisible(false)}} >Topics</button>
+                    <button class="nav-link text-light" onClick={(e)=>{setIsVisible(false)}} >Topics</button>
                 </li>
 
             </ul>
                 <div className="col m-auto">
 
                 {isVisible == true &&
-                <table className="table table-hover ">
+                <table className="table table-hover table-dark mb-5">
                     <thead>
                         <tr>
                             <th scope="col">Group ID</th>
@@ -133,7 +133,7 @@ function StaffRequests() {
 
 
                 {isVisible != true &&
-                <table className="table table-hover ">
+                <table className="table table-hover table-dark mb-5">
                     <thead>
                         <tr>
                             <th scope="col">Group ID</th>

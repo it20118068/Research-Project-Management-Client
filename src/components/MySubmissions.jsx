@@ -47,9 +47,9 @@ function MySubmissions() {
     }
 
     return (  
-        <div className="container">
-            <div className="card p-5 my-bg" style={{borderRadius: "25px"}}>
-            <h4 className="mb-4 p-4 card-header title-bg ">Submisions</h4>
+        <div>
+            <div className="card bg-dark p-3 text-light" style={{opacity:'90%'}} >
+            <h4 className="mb-4 p-4 card-header title-bg ">My Submissions</h4>
 
 
 
@@ -57,7 +57,7 @@ function MySubmissions() {
                     
                 <div className="col m-auto">
    
-                    <table className="table table-hover ">
+                    <table className="table table-hover table-dark mb-5">
                         <thead>
                             <tr>
                                 <th scope="col">GroupID</th>

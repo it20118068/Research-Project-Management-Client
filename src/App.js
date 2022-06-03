@@ -17,7 +17,6 @@ import ResearchGroupRequests from './components/ResearchGroupsRequests';
 import ResearchTopicRequest from './components/ResearchTopicRequests';
 import AllocatePanel from './components/AllocatePanel';
 import RequestTopic from './components/RequestTopic';
-import Punsisi from './components/Punsisi';
 import StudentRequest from './components/StudentRequest';
 import StaffRequests from './components/StaffRequests';
 import MySubmissions from './components/MySubmissions';
@@ -69,7 +68,7 @@ const val = 2;
             {/* Admin */}
             <Route exact path='/allocate/panel' element={<AllocatePanel/>}/>
 
-            <Route exact path='/punsisi' element={<Punsisi/>}/>
+
 
         </Routes>
        

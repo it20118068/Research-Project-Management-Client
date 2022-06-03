@@ -16,6 +16,10 @@ class ActivityService {
             headers: { "Content-Type": "multipart/form-data" }      
         });
     }
+
+    removeActivity(id){
+        return axios.delete(USER_BASE_URL + 'delete/' + id);
+    }
 }
  
 export default new ActivityService();

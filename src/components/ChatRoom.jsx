@@ -15,20 +15,36 @@ function ChatRoom() {
   const [grpId, setGroupId] = useState(localStorage.getItem("grpId"));
   const [role, setRole] = useState();
 
+
+  //Supervisor use
+  const [studentGrps, setStudentGrps] = useState([]);
+  const [selectedGrp, setSelectedGrp] = useState([]);
+
   const socket = useRef();
 
   useEffect(() => {
     AuthenticationService.authUser().then((res) => {
-      if (res.data.role != 2) {
-        window.location.href = "/Login";
-      } else {
-        console.log(res.data);
-        setUserId(res.data.id);
-        setRole(res.data.role);
-        setName(res.data.name);
+    //   if (res.data.role != 1) {
+    //     window.location.href = "/Login";
+    //   } else if (res.data.role != 2) {
+    //     window.location.href = "/Login";
+    //   } else {
+    //     console.log(res.data);
+    //     setUserId(res.data.id);
+    //     setRole(res.data.role);
+    //     setName(res.data.name);
 
-        getChat();
-      }
+    //     getChat();
+    //   }
+
+    if(res.data.role == 1){
+        getGrpList(res.data.id);
+    }
+    console.log(res.data);
+    setUserId(res.data.id);
+    setRole(res.data.role);
+    setName(res.data.name);    
+    getChat(grpId);
     });
   }, []);
 
@@ -36,14 +52,16 @@ function ChatRoom() {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
       console.log(data);
-      getChat();
+      getChat(grpId);
     });
   }, []);
 
-  function getChat() {
-    GroupChatService.getChat(grpId)
+
+
+
+  function getChat(id) {
+    GroupChatService.getChat(id)
       .then((res) => {
-        // console.log(res.data.messages);
         setMessages(res.data.messages);
       })
       .catch((err) => {
@@ -73,17 +91,42 @@ function ChatRoom() {
     });
   }
 
+
+  //Supervior use
+  function getGrpList(id){
+      StudentGroupService.getGroupListById(id)
+        .then((res) => {
+          setStudentGrps(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      console.log(id);  
+  }
+
+  function getSelectedChat(id){
+    setGroupId(id);
+    getChat(id);
+  }
+
   return (
     <div>
       <div className="card bg-dark p-3" style={{ opacity: "90%" }}>
         <h4 className="mb-4 p-4 card-header title-bg ">Chat Room</h4>
-        <div class="btn-group"></div>
+
         <div className="card-body mb-5 row">
           {role ==1 &&   
-          <div
-            className="col-3 overflow-auto"
-            style={{ height: "52vh", backgroundColor: "white" }}
-          ></div>}
+            <div className="col-3 overflow-auto" style={{ height: "52vh", backgroundColor: "black" }} >
+                {
+                  studentGrps.map(
+                    grp => <button className="btn btn-dark mt-3 p-3" style={{ width: "100%"}} onClick={(e)=> getSelectedChat(grp)} > {grp} </button>
+                  )
+                }
+                
+            </div>
+          }
           <div className="col" style={{ height: "52vh" }}>
             <div>
               <div className="overflow-auto" style={{ height: "45vh" }}>

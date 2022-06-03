@@ -82,9 +82,10 @@ function StudentSubmissions() {
     }
 
     return (  
-        <div className="container">
-            <div className="card p-5 my-bg" style={{borderRadius: "25px"}}>
+        <div>
+            <div className="card bg-dark p-3" style={{opacity:'90%'}} >
             <h4 className="mb-4 p-4 card-header title-bg ">Submisions</h4>
+
 
 
 
@@ -92,7 +93,7 @@ function StudentSubmissions() {
                     
                 <div className="col m-auto">
    
-                    <table className="table table-hover ">
+                    <table className="table table-hover table-dark mb-5">
                         <thead>
                             <tr>
                                 <th scope="col">GroupID</th>
@@ -113,7 +114,7 @@ function StudentSubmissions() {
                                         <td>{s.feedback}</td> 
                                         <td>{nameFinder(s.evaluatedBy)}</td> 
                                         <td>
-                                            <a href={s.fileData} className="btn btn-primary btn-sm" >View</a><span> </span>
+                                            <a href={s.fileData} className="btn btn-secondary btn-sm" >View</a><span> </span>
                                             <button className="btn btn-primary btn-sm" data-toggle="modal" data-target="#evaluate" onClick={(e)=>{setSelectedSubmission(s)}} >Evaluate</button>               
                                         </td>
                                     </tr>
@@ -134,7 +135,7 @@ function StudentSubmissions() {
             {/* Modal Evaluate */}
             <div className="modal fade" id="evaluate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
-                    <div className="modal-content">
+                    <div className="modal-content bg-dark text-light">
                     <div className="modal-header">
                         <h5 className="modal-title" id="exampleModalLongTitle">Evaluate Submission</h5>
                     </div>
@@ -142,7 +143,7 @@ function StudentSubmissions() {
                         <form className="p-3">
                             <div class="form-group p-3">
                                 <label className="mb-2">Feedback</label>
-                                <textarea rows="5" type="text" class="form-control" onChange={(e)=>setFeedback(e.target.value)} />
+                                <textarea rows="5" type="text" class="form-control bg-dark text-light" onChange={(e)=>setFeedback(e.target.value)} />
                             </div>             
                         </form>
                     </div>
