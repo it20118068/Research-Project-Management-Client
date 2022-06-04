@@ -5,7 +5,6 @@ import HeaderComponent from './components/HeaderComponent';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 import LoginComponent from './components/LoginComponent';
 import FooterComponent from './components/FooterComponent';
-import ChatComponent from './components/ChatComponent';
 import UsersComponent from './components/UsersComponent';
 import RegisterComponent from './components/RegisterComponent';
 import FileUploadComponent from './components/FileUploadComponent';
@@ -13,10 +12,7 @@ import CreateStudentGroupComponent from './components/CreateStudentGroupComponen
 import HomeComponent from './components/HomeComponent';
 import RequestSupervisor from './components/RequestSupervisor';
 import UserProfileComponent from './components/UserProfileComponent';
-import ResearchGroupRequests from './components/ResearchGroupsRequests';
-import ResearchTopicRequest from './components/ResearchTopicRequests';
 import AllocatePanel from './components/AllocatePanel';
-import RequestTopic from './components/RequestTopic';
 import StudentRequest from './components/StudentRequest';
 import StaffRequests from './components/StaffRequests';
 import MySubmissions from './components/MySubmissions';
@@ -24,7 +20,7 @@ import StudentSubmissions from './components/StudentSubmissions';
 import ChatRoom from './components/ChatRoom';
 
 function App() {
-const val = 2;
+
 
   return (
 
