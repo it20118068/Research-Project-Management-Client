@@ -56,7 +56,7 @@ function ChatRoom() {
 
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("https://research-socket.herokuapp.com");
     socket.current.on("getMessage", (data) => {
       console.log(data)
       console.log(data)
